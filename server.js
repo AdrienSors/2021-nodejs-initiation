@@ -37,6 +37,7 @@ const data = {
 // Run the server!
 const start = async () => {
   try {
+    
     await fastify.listen(3000)
   } catch (err) {
     fastify.log.error(err)
