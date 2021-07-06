@@ -19,6 +19,13 @@ fastify.get('/me', function () {
     }
 });
 
+// Pas besoin de formulaire grace à l'extension "REST Client"
+fastify.get('/heroes', function() {
+  return {
+    name: "ironman"
+  }
+})
+
 const avengers = ["Ironman" , "Captain America", "Spiderman"];
 fastify.get('/heroes', function(){
     return avengers;
@@ -37,7 +44,7 @@ const data = {
 // Run the server!
 const start = async () => {
   try {
-    
+
     await fastify.listen(3000)
   } catch (err) {
     fastify.log.error(err)
